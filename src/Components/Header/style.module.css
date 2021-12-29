@@ -1,0 +1,12 @@
+.themeChange {
+  width: 30px;
+  height: 30px;
+}
+
+.menu {
+  background-color: var(--menu-background);
+}
+
+.menu a {
+  color: var(--menu-text-color) !important;
+}

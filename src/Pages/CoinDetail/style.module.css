@@ -1,0 +1,47 @@
+.main {
+  padding: 2rem;
+}
+
+.mainName {
+  display: flex;
+  align-items: flex-start;
+}
+
+.mainName p {
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.iconImg {
+  width: 50px;
+}
+
+.currentPrice {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.progressBar {
+  width: 215px;
+}
+.hourRange {
+  display: flex;
+}
+
+.hourRange p {
+  margin-right: 1rem;
+}
+
+.mainTag {
+  display: flex;
+  justify-content: space-between;
+}
+.labelTag {
+  color: #464646;
+  font-size: 1rem;
+}
+
+.dataTag {
+  font-size: 1.1rem;
+  font-weight: 6/500;
+}

@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useTheme } from "././Contexts/ThemeContext";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "././Pages/Home";
+import FAQ from "././Pages/FAQ";
+import CoinDetail from "././Pages/CoinDetail";
+import Error from "././Pages/Error";
 
 function App() {
+  const { keepTheme } = useTheme();
+
+  useEffect(() => {
+    keepTheme();
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <Routes>
+          {/* react router yeni versiyonda element kullanarak componentlerı çağırıyoruz */}
+          <Route path='/' exact element={<Home />} />
+          <Route path='/faq' element={<FAQ />} />
+          <Route path='/:coin_id' element={<CoinDetail />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
