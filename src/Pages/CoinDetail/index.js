@@ -44,7 +44,7 @@ function CoinDetail() {
             </div>
           </div>
           <Row>
-            <Col>
+            <Col md={5}>
               <div className={style.mainTag}>
                 <span className={style.labelTag}>Market Cap : </span>
                 <span className={style.dataTag}>${coinDetail.market_cap}</span>
@@ -61,8 +61,6 @@ function CoinDetail() {
                   ${coinDetail.circulating_supply}
                 </span>
               </div>
-            </Col>
-            <Col>
               <div className={style.mainTag}>
                 <span className={style.labelTag}>Fully Diluted Val :</span>
                 <span className={style.dataTag}>
@@ -78,10 +76,12 @@ function CoinDetail() {
                 <span className={style.dataTag}>{coinDetail.max_supply}</span>
               </div>
             </Col>
+            <Col md={7}>
+              <CoinChart coin_id={coin_id} />
+            </Col>
           </Row>
         </div>
       )}
-      <CoinChart />
       <Footer />
     </div>
   );
